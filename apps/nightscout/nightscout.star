@@ -470,7 +470,7 @@ def main(config):
             left_delta_row = [
                 render.WrappedText(
                     content = str_delta.replace("0", "O"),
-                    font = "CG-pixel-3x5-mono" if scale == 1 else "tb-8",
+                    font = "CG-pixel-3x5-mono" if scale == 1 else "10x13",
                     color = color_delta,
                     linespacing = 2 * scale,
                     width = left_col_width,
@@ -612,7 +612,7 @@ def main(config):
             sm_clock_row = [
                 render.WrappedText(
                     content = nightscout_iob if clock_option == "IOB" else nightscout_cob,
-                    font = "tom-thumb" if scale == 1 else "tb-8",
+                    font = "tom-thumb" if scale == 1 else "6x10",
                     color = color_iob if clock_option == "IOB" else color_cob,
                     width = left_col_width,
                     align = "center",
@@ -748,7 +748,7 @@ def main(config):
                     height = 12 if scale == 1 else 20,
                     child = render.WrappedText(
                         content = str_delta.replace("0", "O"),
-                        font = "CG-pixel-3x5-mono" if scale == 1 else "tb-8",
+                        font = "CG-pixel-3x5-mono" if scale == 1 else "6x10",
                         color = color_delta,
                         linespacing = 1 if scale == 1 else 0,
                         align = "center",
