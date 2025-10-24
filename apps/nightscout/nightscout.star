@@ -1291,7 +1291,7 @@ def get_nightscout_data(nightscout_url, nightscout_token, show_graph, display_un
     print(json_url)
 
     # Request latest properties from the Nightscout URL
-    resp = http.get(json_url, headers = headers)
+    resp = http.get(json_url, headers = headers, ttl_seconds = 30)
     print("resp.status_code:", resp.status_code)
     if resp.status_code != 200:
         # Fall back to v1
@@ -1374,7 +1374,7 @@ def get_nightscout_history(nightscout_url, nightscout_token):
     key = nightscout_url + "_nightscout_data"
 
     # Request latest entries from the Nightscout URL
-    resp = http.get(json_url, headers = headers)
+    resp = http.get(json_url, headers = headers, ttl_seconds = 30)
     if resp.status_code != 200:
         # If Error, Get the JSON object from the cache
         nightscout_data_cached = cache.get(key)
@@ -1411,7 +1411,7 @@ def get_nightscout_data_v1(nightscout_url, nightscout_token, display_unit):
     key = nightscout_url + "_nightscout_data"
 
     # Request latest entries from the Nightscout URL
-    resp = http.get(json_url, headers = headers)
+    resp = http.get(json_url, headers = headers, ttl_seconds = 30)
     if resp.status_code != 200:
         return {}, resp.status_code
 
